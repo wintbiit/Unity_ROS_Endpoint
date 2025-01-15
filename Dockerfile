@@ -32,4 +32,4 @@ EXPOSE 10000
 EXPOSE 11311
 EXPOSE 8765
 VOLUME /root/.ros/log
-ENTRYPOINT ["bash", "-c", "source /opt/ros/$ROS_DISTRO/setup.bash && source ${ROS_WORKSPACE}/devel/setup.bash && roslaunch ros_unity_endpoint unity_endpoint.launch"]
+ENTRYPOINT ["bash", "-c", "source ${ROS_WORKSPACE}/devel/setup.bash && roslaunch ros_unity_endpoint entrypoint.launch"]

@@ -1,10 +1,13 @@
 <launch>
+    <arg name="tcp_endpoint_port" default="10000"/>
+    <arg name="foxglove_bridge_port" default="8765"/>
+
     <include file="$(find ros_tcp_endpoint)/launch/endpoint.launch">
         <arg name="tcp_ip" value="0.0.0.0"/>
-        <arg name="tcp_port" value="10000"/>
+        <arg name="tcp_port" value="$(arg tcp_endpoint_port)"/>
     </include>
     <include file="$(find foxglove_bridge)/launch/foxglove_bridge.launch">
-        <arg name="port" value="8765" />
         <arg name="address" value="0.0.0.0" />
+        <arg name="port" value="$(arg foxglove_bridge_port)" />
     </include>
 </launch>
