@@ -1,0 +1,3 @@
+[submodule "ros-tcp-endpoint"]
+	path = ros-tcp-endpoint
+	url = https://github.com/wintbiit/ROS-TCP-Endpoint.git

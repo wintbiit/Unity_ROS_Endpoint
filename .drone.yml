@@ -1,0 +1,31 @@
+kind: pipeline
+type: docker
+
+name: sentinel-ros
+
+platform:
+  os: linux
+  arch: amd64
+
+environment:
+  VERSION: "0.0.1"
+
+clone:
+
+
+steps:
+  - name: build-image
+    image: plugins/docker:20.14
+    settings:
+      dockerfile: Dockerfile
+      username:
+        from_secret: REGISTRY_USER
+      password:
+        from_secret: REGISTRY_PASSWORD
+      repo: hub.scutbot.cn/simulator/sentinel-ros
+      registry: hub.scutbot.cn
+      build_args:
+        - BUILD_DATE=${DRONE_BUILD_CREATED}
+        - VCS_REF=${DRONE_COMMIT_SHA}
+      tags:
+        - latest

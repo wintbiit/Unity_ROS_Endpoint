@@ -1,0 +1,6 @@
+build
+devel
+.idea
+.git
+.gitignore
+*.md
