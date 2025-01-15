@@ -6,9 +6,6 @@ ENV ROS_WORKSPACE=/catkin_ws
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Shanghai
 
-# Install dependencies
-RUN sed -i 's@//.*archive.ubuntu.com@//mirrors.tuna.tsinghua.edu.cn@g' /etc/apt/sources.list
-
 ## ROS Deps
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
